@@ -4,7 +4,7 @@
         <h1>Get the latest tech news!</h1>
     </section>
     <section class="featured-posts">
-        <PostsList />
+        <PostsList :posts="loadedPosts" />
     </section>
 </div>
 </template>
@@ -12,6 +12,23 @@
 <script>
 import PostsList from "@/components/Posts/PostsList";
 export default {
+    data() {
+        return {
+            loadedPosts: [{
+                    id: "1",
+                    title: "Post Title",
+                    previewText: "Post content",
+                    thumbnail: "https://s27389.pcdn.co/wp-content/uploads/2019/10/retail-innovation-changing-tech-consumer-employee-demands-1024x440.jpeg",
+                },
+                {
+                    id: "2",
+                    title: "Post Title",
+                    previewText: "Post content",
+                    thumbnail: "https://s27389.pcdn.co/wp-content/uploads/2019/10/retail-innovation-changing-tech-consumer-employee-demands-1024x440.jpeg",
+                },
+            ],
+        };
+    },
     components: {
         PostsList,
     },
@@ -24,7 +41,7 @@ export default {
     position: relative;
     padding: 30px;
     box-sizing: border-box;
-    background-image: url('~assets/images/main-page-background.jpg');
+    background-image: url("~assets/images/main-page-background.jpg");
     background-position: center;
     background-size: cover;
 }
