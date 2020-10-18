@@ -4,17 +4,16 @@
         <h1>Get the latest tech news!</h1>
     </section>
     <section class="featured-posts">
-        <PostPreview id="1" title="Post Title" previewText="Post Content" thumbnail="https://sm.mashable.com/mashable_pk/photo/default/tech_ntqz.jpg" />
-        <PostPreview id="2" title="Post Title 2" previewText="Post Content 2" thumbnail="https://sm.mashable.com/mashable_pk/photo/default/tech_ntqz.jpg" />
+        <PostsList />
     </section>
 </div>
 </template>
 
 <script>
-import PostPreview from "../components/Posts/PostPreview";
+import PostsList from "@/components/Posts/PostsList";
 export default {
     components: {
-        PostPreview,
+        PostsList,
     },
 };
 </script>
