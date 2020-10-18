@@ -13,6 +13,7 @@
 import PostsList from "@/components/Posts/PostsList";
 export default {
     asyncData(context, callBack) {
+        console.log('async data executed')
         setTimeout(() => {
             callBack(null, {
                 loadedPosts: [{

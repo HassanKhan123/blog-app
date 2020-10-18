@@ -6,7 +6,7 @@
 
     <section class="existing-posts">
         <h1>Existing Posts</h1>
-        <PostsList isAdmin />
+        <PostsList isAdmin :posts="loadedPosts" />
     </section>
 
 </div>
@@ -16,6 +16,23 @@
 import AppButton from "@/components/UI/AppButton";
 import PostsList from "@/components/Posts/PostsList";
 export default {
+    data() {
+        return {
+            loadedPosts: [{
+                    id: "1",
+                    title: "Post Title",
+                    previewText: "Post content",
+                    thumbnail: "https://s27389.pcdn.co/wp-content/uploads/2019/10/retail-innovation-changing-tech-consumer-employee-demands-1024x440.jpeg",
+                },
+                {
+                    id: "2",
+                    title: "Post Title",
+                    previewText: "Post content",
+                    thumbnail: "https://s27389.pcdn.co/wp-content/uploads/2019/10/retail-innovation-changing-tech-consumer-employee-demands-1024x440.jpeg",
+                },
+            ],
+        }
+    },
     components: {
         PostsList,
         AppButton
