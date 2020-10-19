@@ -34,7 +34,17 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    '@nuxtjs/axios'
   ],
+
+  axios:{
+    baseURL:"https://nuxt-blog-55f05.firebaseio.com"
+  },
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: "https://nuxt-blog-55f05.firebaseio.com"
+    }
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
