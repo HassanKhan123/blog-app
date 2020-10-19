@@ -35,6 +35,9 @@ export default {
             .then((data) => data)
             .catch((err) => context.error(new Error(err.message)));
     },
+    created() {
+        this.$store.dispatch('setPosts', this.loadedPosts)
+    },
     components: {
         PostsList,
     },
