@@ -16,9 +16,6 @@
 </template>
 
 <script>
-import AppButton from "@/components/UI/AppButton";
-import AppControlInput from "@/components/UI/AppControlInput";
-
 export default {
     props: {
         post: {
@@ -38,10 +35,6 @@ export default {
                 previewText: ""
             },
         };
-    },
-    components: {
-        AppButton,
-        AppControlInput,
     },
     methods: {
         onSave() {

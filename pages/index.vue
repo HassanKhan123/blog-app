@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import PostsList from "@/components/Posts/PostsList";
+
 export default {
     
     computed: {
@@ -18,9 +18,7 @@ export default {
             return this.$store.getters.loadedPosts
         }
     },
-    components: {
-        PostsList,
-    },
+   
 };
 </script>
 

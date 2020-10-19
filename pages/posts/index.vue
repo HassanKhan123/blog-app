@@ -5,16 +5,13 @@
 </template>
 
 <script>
-import PostsList from "@/components/Posts/PostsList";
+
 export default {
 
     computed: {
         loadedPosts() {
             return this.$store.getters.loadedPosts
         }
-    },
-    components: {
-        PostsList,
     },
 };
 </script>
