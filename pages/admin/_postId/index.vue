@@ -25,25 +25,19 @@ export default {
             )
             .then((res) => {
                 return {
-                    loadedPost: res.data,
+                    loadedPost: {
+                        ...res.data,
+                        id: context.params.postId
+                    },
                 };
             })
             .catch((err) => context.error(err));
     },
     methods: {
         onSubmitted(editedPost) {
-            axios
-                .put(
-                    "https://nuxt-blog-55f05.firebaseio.com/posts/" +
-                    this.$route.params.postId +
-                    ".json",
-                    editedPost
-                )
-                .then((res) => {
-                    console.log(res)
-                    this.$router.push('/admin')
-                })
-                .catch((err) => console.log(err));
+            this.$store
+                .dispatch("editPost", editedPost)
+                .then(() => this.$router.push("/admin"));
         },
     },
 };

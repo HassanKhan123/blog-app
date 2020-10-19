@@ -17,20 +17,10 @@ export default {
     },
     layout: "admin",
     methods: {
-        async onSubmitted(postData) {
-            try {
-                const res = await axios.post(
-                    "https://nuxt-blog-55f05.firebaseio.com/posts.json", {
-                        ...postData,
-                        updatedDate: new Date()
-                    }
-                );
-
-                console.log(res);
+        onSubmitted(postData) {
+            this.$store.dispatch("addPost", postData).then(() => {
                 this.$router.push("/admin");
-            } catch (error) {
-                console.log(error);
-            }
+            });
         },
     },
 };
