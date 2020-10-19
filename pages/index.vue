@@ -12,31 +12,11 @@
 <script>
 import PostsList from "@/components/Posts/PostsList";
 export default {
-    asyncData(context) {
-        return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve({
-                        loadedPosts: [{
-                                id: "1",
-                                title: "Post Title",
-                                previewText: "Post content",
-                                thumbnail: "https://s27389.pcdn.co/wp-content/uploads/2019/10/retail-innovation-changing-tech-consumer-employee-demands-1024x440.jpeg",
-                            },
-                            {
-                                id: "2",
-                                title: "Post Title",
-                                previewText: "Post content",
-                                thumbnail: "https://s27389.pcdn.co/wp-content/uploads/2019/10/retail-innovation-changing-tech-consumer-employee-demands-1024x440.jpeg",
-                            },
-                        ],
-                    });
-                }, 1500);
-            })
-            .then((data) => data)
-            .catch((err) => context.error(new Error(err.message)));
-    },
-    created() {
-        this.$store.dispatch('setPosts', this.loadedPosts)
+    
+    computed: {
+        loadedPosts() {
+            return this.$store.getters.loadedPosts
+        }
     },
     components: {
         PostsList,
