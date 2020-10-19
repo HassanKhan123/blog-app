@@ -50,7 +50,8 @@ export default {
   build: {
   },
   env:{
-    baseUrl:'https://nuxt-blog-55f05.firebaseio.com'
+    baseUrl:'https://nuxt-blog-55f05.firebaseio.com',
+    apiKey:"AIzaSyDQjTznLfnz6OUkwxpqA3yAH6EnVeeQAvE"
   },
   pageTransition:{
     name:'fade',
