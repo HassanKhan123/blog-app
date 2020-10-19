@@ -24,14 +24,22 @@ export default {
     },
     methods: {
         onSubmit() {
-            this.$axios.$post(
-                "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" +
-                process.env.apiKey, {
+            let authUrl =
+                "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" +
+                process.env.apiKey;
+            if (!this.isLogin) {
+                authUrl =
+                    "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" +
+                    process.env.apiKey;
+            }
+            this.$axios
+                .$post(authUrl, {
                     email: this.email,
                     password: this.password,
                     returnSecureToken: true,
-                }
-            ).then(res => console.log(res)).catch(err => console.log(err));
+                })
+                .then((res) => console.log(res))
+                .catch((err) => console.log(err));
         },
     },
 };
